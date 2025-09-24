@@ -38,9 +38,6 @@ void update(void) {}
 void render(void) {
     cc_rendererClear(.2,.3,.4,1);
 
-    //cc_rendererSetTint(1,0,0,1);
-    //cc_rendererDrawRect(0,0,64,64);
-
     cc_rendererSetTint(GET_THEME(base));
     cc_rendererDrawRect(0,0,1440,20);
     cc_rendererDrawRect(0,0, 256,2560);
