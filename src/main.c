@@ -2,6 +2,10 @@
 #include <core/renderer/renderer.h>
 #include <core/macros/macros.h>
 #include <core/types/text.h>
+#include <core/input/input.h>
+#include <collision/collision.h>
+
+#include <stdio.h>
 
 
 struct {
@@ -46,7 +50,18 @@ void render(void) {
     cc_rendererDrawRect(0,20,cc_width,2);
 
     cc_rendererSetTint(GET_THEME(text));
-    cc_textDrawText(font, "cacao-editor INDEV", 2, 2,2);
+    cc_textDrawText(font, "cacao-editor INDEV", 2, 4,2);
+
+    printf("x: %f, y: %f\n", cc_mouse_x, cc_mouse_y);
+
+    if (cc_collidePointRect(cc_mouse_x,cc_mouse_y, 0,24,256,16))
+        cc_rendererSetTint(GET_THEME(highlight));
+    else
+        cc_rendererSetTint(GET_THEME(base));
+    cc_rendererDrawRect(0,24,256,16);
+
+    cc_rendererSetTint(GET_THEME(text));
+    cc_textDrawText(font, ">root", 2, 4, 24);
 }
 
 void clean(void) {
