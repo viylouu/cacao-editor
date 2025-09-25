@@ -39,11 +39,11 @@ void render(void) {
     cc_rendererClear(.2,.3,.4,1);
 
     cc_rendererSetTint(GET_THEME(base));
-    cc_rendererDrawRect(0,0,2560,20);
-    cc_rendererDrawRect(0,0, 256,1440);
+    cc_rendererDrawRect(0,0,cc_width,24);
+    cc_rendererDrawRect(0,0,256,cc_height);
 
     cc_rendererSetTint(GET_THEME(highlight));
-    cc_rendererDrawRect(0,20,2560,2);
+    cc_rendererDrawRect(0,20,cc_width,2);
 
     cc_rendererSetTint(GET_THEME(text));
     cc_textDrawText(font, "cacao-editor INDEV", 2, 2,2);
